@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Fire_Extinguishing.props" />
+</Project>

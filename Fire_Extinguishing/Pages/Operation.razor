@@ -1,0 +1,134 @@
+﻿@page "/Operation"
+
+<PageTitle>Operation</PageTitle>
+
+
+<MudPaper Class="pa-4 mx-auto mt-6" Style="max-width:96vw;" Elevation="10">
+    <MudText Typo="Typo.h5" GutterBottom="true">مقادیر پیش فرض</MudText>
+
+    <MudGrid Class="row pt-5">
+
+        <MudItem Class="col-4">
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="DAA" Label="خرابی دتکتور (DAA)"
+                                 Variant="Variant.Text"
+                                 Min="0" Max="1"/>
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="T" Label="خرابی مخزن آب (T)" Variant="Variant.Text"
+                                 Min="0" Max="1"/>
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="OSP" Label="خرابی برق OSP" Variant="Variant.Text"
+                                 Min="0" Max="1"/>
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="DG" Label="خرابی برق اضطراری (DG)"
+                                 Variant="Variant.Text"
+                                 Min="0" Max="1"/>
+            </MudItem>
+        </MudItem>
+
+        <MudItem Class="col-4">
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="P1" Label="خرابی پمپ 1 (P1)"
+                                 Variant="Variant.Text"
+                                 Min="0" Max="1"/>
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+
+                <MudNumericField HideSpinButtons="true" @bind-Value="V11" Label="خرابی شیر V11"
+                                 Variant="Variant.Text"
+                                 Min="0" Max="1"/>
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+
+                <MudNumericField HideSpinButtons="true" @bind-Value="V12" Label="خرابی شیر V12"
+                                 Variant="Variant.Text"
+                                 Min="0" Max="1"/>
+
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+
+                <MudNumericField HideSpinButtons="true" @bind-Value="N1" Label="خرابی نازل 1 (N1)"
+                                 Variant="Variant.Text"
+                                 Min="0" Max="1"/>
+            </MudItem>
+        </MudItem>
+
+        <MudItem Class="col-4">
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="OP" Label="خرابی اپراتور (OP)"
+                                 Variant="Variant.Text" Min="0" Max="1"/>
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="P2" Label="خرابی پمپ 2 (P2)"
+                                 Variant="Variant.Text" Min="0" Max="1"/>
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="V21" Label="خرابی شیر V21"
+                                 Variant="Variant.Text" Min="0" Max="1"/>
+
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+                <MudNumericField HideSpinButtons="true" @bind-Value="V22" Label="خرابی شیر V22"
+                                 Variant="Variant.Text" Min="0" Max="1"/>
+            </MudItem>
+            <MudItem Class="col-7 pt-4">
+
+                <MudNumericField HideSpinButtons="true" @bind-Value="N2" Label="خرابی نازل 2 (N2)"
+                                 Variant="Variant.Text" Min="0" Max="1"/>
+            </MudItem>
+        </MudItem>
+    </MudGrid>
+
+    <MudDivider Class="my-4"/>
+
+</MudPaper>
+
+<MudDivider/>
+
+<MudPaper Class="pa-4 mx-auto mt-6" Style="max-width:96vw;" Elevation="10">
+    <MudText Typo="Typo.h4" GutterBottom="true">🧯 شبیه ‌سازی احتمال عدم مهار آتش</MudText>
+
+    <MudText Typo="Typo.h6" Color="Color.Secondary">احتمال عدم مهار آتش: %@TopFailPercent.ToString("0.000")</MudText>
+    <MudProgressLinear Color="Color.Secondary" Rounded="true" Striped="true" Size="Size.Medium" Value="@TopFailPercent"
+                       Class="my-7"/>
+
+    <MudButton Style=" background-color: #247BA0; color: white" Variant="Variant.Filled" OnClick="@CalculateFailure">محاسبه 🔍</MudButton>
+
+    <MudItem Class="pt-4">
+        <MudText Typo="Typo.h5" GutterBottom="true">احتمال شکست اجزای سیستم:</MudText>
+
+        <MudItem Class="pt-4">
+
+            <MudText Typo="Typo.h6">مجموع احتمال خرابی(DAA،T،OSP،DG): @CriticalFailPercent.ToString("0.000")% </MudText>
+            <MudProgressLinear Color="Color.Primary" Rounded="true" Striped="true" Size="Size.Small"
+                               Value="@CriticalFailPercent" Class="my-2"/>
+           
+        </MudItem>
+        <MudItem Class="pt-3">
+
+            <MudText Typo="Typo.h6">مسیر پمپ 1: %@F1Percent.ToString("0.000") </MudText>
+            <MudProgressLinear Color="Color.Primary" Rounded="true" Striped="true" Size="Size.Small"
+                               Value="@F1Percent"
+                               Class="my-2"/>
+
+        </MudItem>
+        <MudItem Class="pt-3">
+
+            <MudText Typo="Typo.h6">مسیر پمپ 2: %@F2Percent.ToString("0.000")</MudText>
+            <MudProgressLinear Color="Color.Primary" Rounded="true" Striped="true" Size="Size.Small"
+                               Value="@F2Percent"
+                               Class="my-2"/>
+
+        </MudItem>
+
+    </MudItem>
+
+</MudPaper>
+
+<br/>
+<br/>
+<br/>
+

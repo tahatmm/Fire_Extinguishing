@@ -1,0 +1,59 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider/>
+<MudPopoverProvider/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+<MudLayout>
+    <MudAppBar Style="border-radius: 1px; background-color: #25283D" Elevation="1" Dense="@_dense">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start"
+                       OnClick="@ToggleDrawer"/>
+        <MudSpacer/>
+    </MudAppBar>
+
+    <!-- منو همبرگری به صورت overlay -->
+    <MudDrawer @bind-Open="@_open"
+               Variant="@DrawerVariant.Temporary"
+               ClipMode="DrawerClipMode.Always"
+               Elevation="1"
+               Anchor="Anchor.Right"
+               Style="background-color: #25283D">
+        <MudDrawerHeader>
+            <MudNavLink Class="text-light custom-hover-link custom-text-size" Href="/">Home</MudNavLink>
+        </MudDrawerHeader>
+        <MudNavMenu>
+            <MudNavLink Class="text-light custom-hover-link" Href="/Operation" Match="NavLinkMatch.All">Operation
+            </MudNavLink>
+            <MudNavLink Class="text-light custom-hover-link" Href="/About" Match="NavLinkMatch.All">About</MudNavLink>
+        </MudNavMenu>
+    </MudDrawer>
+
+    <!-- محتوای اصلی صفحه -->
+    <MudMainContent Class="col-12">
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    private bool _open = false;
+    private bool _dense = false;
+
+    private void ToggleDrawer()
+    {
+        _open = !_open;
+    }
+
+}
+
+<style>
+    /* فرض کنید متن شما داخل عنصری با کلاس داخلی .mud-nav-link-text قرار دارد */
+    .custom-hover-link:hover .mud-nav-link-text {
+        color: #60E1E0 !important;
+    }
+
+    .custom-text-size {
+        font-size: x-large; /* سایز دلخواه */
+    }
+
+</style>

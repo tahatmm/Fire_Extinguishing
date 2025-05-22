@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\obj\\Debug\\net8.0\\compressed\\ydoeg080rx.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Fire_Extinguishing.styles.css",
+      "PackagePath": "staticwebassets\\Fire_Extinguishing.styles.css"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\porograming\\personal\\Fire_Extinguishing\\Fire_Extinguishing\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Fire_Extinguishing.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Fire_Extinguishing.props",
+      "PackagePath": "build\\Fire_Extinguishing.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Fire_Extinguishing.props",
+      "PackagePath": "buildMultiTargeting\\Fire_Extinguishing.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Fire_Extinguishing.props",
+      "PackagePath": "buildTransitive\\Fire_Extinguishing.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
